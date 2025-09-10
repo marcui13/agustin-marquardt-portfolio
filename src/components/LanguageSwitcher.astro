@@ -6,7 +6,15 @@ const currentLang = getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname;
 
 // Remove language prefix from path to get the base path
-const basePath = currentPath.replace(/^\/[a-z]{2}/, '') || '/';
+let basePath = currentPath.replace(/^\/[a-z]{2}\//, '/');
+if (basePath === currentPath) {
+  // If no language prefix was found, we're on English pages
+  basePath = currentPath;
+}
+// Ensure basePath starts with /
+if (!basePath.startsWith('/')) {
+  basePath = '/' + basePath;
+}
 ---
 
 <div class="language-switcher relative">
