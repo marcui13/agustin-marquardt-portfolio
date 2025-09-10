@@ -73,10 +73,10 @@ src/
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/agustin-marquardt/portfolio.git
+git clone https://github.com/marcui13/agustin-marquardt-portfolio
 
 # Navegar al directorio
-cd portfolio
+cd agustin-marquardt-portfolio
 
 # Instalar dependencias
 npm install
@@ -263,9 +263,9 @@ dist
 ## 📧 Contacto
 
 **Agustín Marquardt**
-- Email: agustin.marquardt@email.com
-- LinkedIn: [agustin-marquardt](https://linkedin.com/in/agustin-marquardt)
-- GitHub: [agustin-marquardt](https://github.com/agustin-marquardt)
+- Email: amarquardt20@gmail.com
+- LinkedIn: [Agustin Marquardt](https://www.linkedin.com/in/agustin-marquardt-0015611b3/)
+- GitHub: [marcui13](https://github.com/marcui13)
 
 ---
 
