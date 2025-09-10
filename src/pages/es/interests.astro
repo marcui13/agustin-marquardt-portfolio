@@ -1,11 +1,11 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import InterestCard from '../components/InterestCard.astro';
-import Button from '../components/Button.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import interestsData from '../data/interests.json';
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import InterestCard from '../../components/InterestCard.astro';
+import Button from '../../components/Button.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import interestsData from '../../data/interests.json';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -18,10 +18,11 @@ const t = useTranslations(lang);
     <!-- Header -->
     <div class="text-center mb-16 fade-in">
       <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-        {t('interests.heading')}
+        Mis Intereses
       </h1>
       <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-        {t('interests.subtitle')}
+        Más allá del desarrollo de software, tengo diversas pasiones que alimentan mi creatividad 
+        y perspectiva única en la tecnología.
       </p>
     </div>
 
@@ -47,26 +48,27 @@ const t = useTranslations(lang);
             <div class="flex items-center mb-6">
               <span class="text-4xl mr-4">🤖</span>
               <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
-                {t('interests.ai.title')}
+                Inteligencia Artificial
               </h2>
             </div>
             
             <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              {t('interests.ai.description')}
+              La IA no es solo mi área de estudio actual, sino una pasión que impulsa mi visión del futuro tecnológico. 
+              Estoy particularmente interesado en:
             </p>
             
             <div class="grid md:grid-cols-2 gap-6">
               <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
-                <h3 class="font-semibold text-gray-900 dark:text-white mb-3">{t('interests.ai.mobile')}</h3>
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Aplicaciones Móviles Inteligentes</h3>
                 <p class="text-gray-600 dark:text-gray-300">
-                  {t('interests.ai.mobile.desc')}
+                  Integración de modelos de IA en apps móviles para crear experiencias más personalizadas e intuitivas.
                 </p>
               </div>
               
               <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
-                <h3 class="font-semibold text-gray-900 dark:text-white mb-3">{t('interests.ai.apis')}</h3>
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-3">APIs de IA</h3>
                 <p class="text-gray-600 dark:text-gray-300">
-                  {t('interests.ai.apis.desc')}
+                  Experiencia práctica con OpenAI y Gemini APIs, explorando sus capacidades en el desarrollo.
                 </p>
               </div>
             </div>
@@ -81,36 +83,37 @@ const t = useTranslations(lang);
             <div class="flex items-center mb-6">
               <span class="text-4xl mr-4">💰</span>
               <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
-                {t('interests.finance.title')}
+                Finanzas
               </h2>
             </div>
             
             <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              {t('interests.finance.description')}
+              Mi interés en las finanzas se refleja tanto en mi vida personal como en mis proyectos de desarrollo. 
+              Me fascina la intersección entre tecnología y finanzas.
             </p>
             
             <div class="grid md:grid-cols-3 gap-6">
               <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center">
                 <div class="text-2xl mb-3">📊</div>
-                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{t('interests.finance.analysis')}</h3>
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Análisis de Mercados</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
-                  {t('interests.finance.analysis.desc')}
+                  Estudio de tendencias y análisis técnico
                 </p>
               </div>
               
               <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center">
                 <div class="text-2xl mb-3">💳</div>
-                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{t('interests.finance.fintech')}</h3>
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Fintech</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
-                  {t('interests.finance.fintech.desc')}
+                  Desarrollo en el sector financiero con Prex
                 </p>
               </div>
               
               <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center">
                 <div class="text-2xl mb-3">📱</div>
-                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{t('interests.finance.apps')}</h3>
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Apps Financieras</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
-                  {t('interests.finance.apps.desc')}
+                  Proyectos de gestión financiera personal
                 </p>
               </div>
             </div>
@@ -125,42 +128,43 @@ const t = useTranslations(lang);
             <div class="flex items-center mb-6">
               <span class="text-4xl mr-4">🚀</span>
               <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
-                {t('interests.development.title')}
+                Desarrollo Personal
               </h2>
             </div>
             
             <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              {t('interests.development.description')}
+              Creo firmemente que el crecimiento personal y profesional van de la mano. 
+              Mi filosofía se basa en el aprendizaje continuo y la mejora constante.
             </p>
             
             <div class="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">{t('interests.development.principles')}</h3>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Principios que me guían:</h3>
                 <ul class="space-y-3 text-gray-600 dark:text-gray-300">
                   <li class="flex items-center">
                     <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                    {t('interests.development.learning')}
+                    Aprendizaje continuo en tecnologías emergentes
                   </li>
                   <li class="flex items-center">
                     <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                    {t('interests.development.balance')}
+                    Mantener equilibrio entre vida personal y profesional
                   </li>
                   <li class="flex items-center">
                     <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                    {t('interests.development.sharing')}
+                    Compartir conocimiento con la comunidad
                   </li>
                   <li class="flex items-center">
                     <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                    {t('interests.development.challenges')}
+                    Aceptar desafíos que me saquen de la zona de confort
                   </li>
                 </ul>
               </div>
               
               <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">{t('interests.development.currently')}</h3>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Actualmente aprendiendo:</h3>
                 <div class="space-y-2">
                   <div class="flex items-center justify-between">
-                    <span class="text-gray-600 dark:text-gray-300">Artificial Intelligence</span>
+                    <span class="text-gray-600 dark:text-gray-300">Inteligencia Artificial</span>
                     <div class="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                       <div class="bg-orange-500 h-2 rounded-full w-3/4"></div>
                     </div>
@@ -191,31 +195,32 @@ const t = useTranslations(lang);
             <div class="flex justify-center items-center mb-6">
               <span class="text-4xl mr-4">👨‍🍳</span>
               <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
-                {t('interests.cooking.title')}
+                Cocina
               </h2>
             </div>
             
             <p class="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              {t('interests.cooking.description')}
+              La cocina es mi escape creativo. Me encanta experimentar con nuevos sabores y técnicas, 
+              encontrando paralelos entre la precisión del código y la creatividad culinaria.
             </p>
             
             <div class="grid sm:grid-cols-3 gap-6">
               <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
                 <div class="text-2xl mb-3">🍝</div>
-                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{t('interests.cooking.pasta')}</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-300">{t('interests.cooking.pasta.desc')}</p>
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Pasta Italiana</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">Mi especialidad favorita</p>
               </div>
               
               <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
                 <div class="text-2xl mb-3">🥘</div>
-                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{t('interests.cooking.argentine')}</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-300">{t('interests.cooking.argentine.desc')}</p>
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Cocina Argentina</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">Tradiciones familiares</p>
               </div>
               
               <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
                 <div class="text-2xl mb-3">🍣</div>
-                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">{t('interests.cooking.asian')}</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-300">{t('interests.cooking.asian.desc')}</p>
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Cocina Asiática</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">Nuevos sabores por explorar</p>
               </div>
             </div>
           </div>
@@ -228,16 +233,16 @@ const t = useTranslations(lang);
       <div class="max-w-3xl mx-auto">
         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
           <span class="mr-2">💡</span>
-          {t('interests.howto.title')}
+          ¿Cómo agregar nuevos intereses?
         </h3>
         <p class="text-gray-600 dark:text-gray-300 mb-4">
-          {t('interests.howto.description')} 
+          Para agregar nuevos intereses simplemente edita el archivo 
           <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-sm">src/data/interests.json</code>
         </p>
         <div class="bg-gray-900 rounded-lg p-4 text-sm">
           <pre class="text-green-400"><code>{`{
-  "name": "Interest Name",
-  "description": "Interest description...",
+  "name": "Nombre del Interés",
+  "description": "Descripción del interés...",
   "icon": "🎯"
 }`}</code></pre>
         </div>
@@ -247,17 +252,17 @@ const t = useTranslations(lang);
     <!-- CTA -->
     <section class="text-center py-16 slide-up stagger-6">
       <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-        {t('interests.cta.title')}
+        ¿Compartimos algún interés?
       </h2>
       <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-        {t('interests.cta.description')}
+        Me encantaría conocer tus pasiones y encontrar puntos en común para colaborar.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button href={lang === 'en' ? '/contact' : `/${lang}/contact`} variant="primary" size="lg">
-          {t('interests.cta.talk')}
+        <Button href="/contact" variant="primary" size="lg">
+          Hablemos
         </Button>
-        <Button href={lang === 'en' ? '/projects' : `/${lang}/projects`} variant="outline" size="lg">
-          {t('interests.cta.projects')}
+        <Button href="/projects" variant="outline" size="lg">
+          Ver mis proyectos
         </Button>
       </div>
     </section>

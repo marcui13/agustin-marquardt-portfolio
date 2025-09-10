@@ -5,12 +5,14 @@ Un portfolio moderno y minimalista construido con **Astro** + **TailwindCSS**, d
 ## ✨ Características
 
 - **🎨 Diseño Minimalista**: Interfaz limpia y moderna con paleta de colores neutra
+- **🌐 Bilingüe**: Soporte completo para español e inglés con navegación intuitiva
 - **📱 Mobile-First**: Completamente responsivo y optimizado para dispositivos móviles
 - **⚡ Rendimiento Optimizado**: Construido con Astro para máxima velocidad
 - **🌙 Modo Oscuro**: Soporte completo para tema claro y oscuro
 - **🎭 Animaciones Suaves**: Micro-interacciones y animaciones CSS personalizadas
 - **♿ Accesible**: Siguiendo las mejores prácticas de accesibilidad web
 - **🔍 SEO Optimizado**: Meta tags y estructura semántica
+- **🔄 i18n Integrado**: Sistema de traducción centralizado y extensible
 
 ## 🛠️ Stack Tecnológico
 
@@ -25,21 +27,32 @@ Un portfolio moderno y minimalista construido con **Astro** + **TailwindCSS**, d
 ```
 src/
 ├── components/          # Componentes reutilizables
-│   ├── Header.astro    # Navegación principal
+│   ├── Header.astro    # Navegación principal con switcher de idioma
 │   ├── Footer.astro    # Pie de página
 │   ├── ProjectCard.astro  # Tarjeta de proyecto
 │   ├── InterestCard.astro # Tarjeta de interés
-│   └── Button.astro    # Botón reutilizable
+│   ├── Button.astro    # Botón reutilizable
+│   └── LanguageSwitcher.astro # Cambio de idioma
 │
 ├── layouts/            # Layouts de página
 │   └── MainLayout.astro # Layout principal
 │
 ├── pages/              # Páginas del sitio
-│   ├── index.astro     # Página de inicio
-│   ├── about.astro     # Sobre mí
-│   ├── projects.astro  # Proyectos
-│   ├── interests.astro # Intereses
-│   └── contact.astro   # Contacto
+│   ├── index.astro     # Página de inicio (inglés)
+│   ├── about.astro     # Sobre mí (inglés)
+│   ├── projects.astro  # Proyectos (inglés)
+│   ├── interests.astro # Intereses (inglés)
+│   ├── contact.astro   # Contacto (inglés)
+│   └── es/             # Páginas en español
+│       ├── index.astro     # Inicio (español)
+│       ├── about.astro     # Sobre mí (español)
+│       ├── projects.astro  # Proyectos (español)
+│       ├── interests.astro # Intereses (español)
+│       └── contact.astro   # Contacto (español)
+│
+├── i18n/               # Sistema de traducción
+│   ├── ui.ts           # Traducciones centralizadas
+│   └── utils.ts        # Utilidades de i18n
 │
 ├── data/               # Datos en JSON
 │   ├── projects.json   # Lista de proyectos
@@ -88,28 +101,65 @@ npm run astro        # CLI de Astro
 
 ## 📝 Personalización
 
-### Agregar Nuevos Proyectos
+### 🌐 Sistema de Traducciones
+
+El portfolio incluye soporte bilingüe (español/inglés) con las siguientes características:
+
+- **Idioma por defecto**: Inglés (`/`)
+- **Idioma secundario**: Español (`/es/`)
+- **Cambio dinámico**: Switch de idioma en el header
+- **URLs localizadas**: Rutas diferentes según el idioma
+
+#### Agregar nuevas traducciones
+
+Edita `src/i18n/ui.ts`:
+
+```typescript
+export const ui = {
+  es: {
+    'key': 'Texto en español'
+  },
+  en: {
+    'key': 'Text in English'
+  }
+} as const;
+```
+
+#### Usar traducciones en componentes
+
+```astro
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<h1>{t('page.title')}</h1>
+```
+
+### 💼 Agregar Nuevos Proyectos
 
 Edita `src/data/projects.json`:
 
 ```json
 {
-  "name": "Nombre del Proyecto",
-  "description": "Descripción detallada del proyecto...",
-  "link": "https://github.com/usuario/proyecto",
+  "name": "Project Name",
+  "description": "Detailed project description...",
+  "link": "https://github.com/user/project",
   "technologies": ["React", "Node.js", "MongoDB"],
   "featured": true
 }
 ```
 
-### Agregar Nuevos Intereses
+### ❤️ Agregar Nuevos Intereses
 
 Edita `src/data/interests.json`:
 
 ```json
 {
-  "name": "Nombre del Interés",
-  "description": "Descripción del interés...",
+  "name": "Interest Name",
+  "description": "Interest description...",
   "icon": "🎯"
 }
 ```

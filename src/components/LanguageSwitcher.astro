@@ -1,0 +1,103 @@
+---
+import { languages } from '../i18n/ui';
+import { getLangFromUrl } from '../i18n/utils';
+
+const currentLang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname;
+
+// Remove language prefix from path to get the base path
+const basePath = currentPath.replace(/^\/[a-z]{2}/, '') || '/';
+---
+
+<div class="language-switcher relative">
+  <button 
+    id="language-button"
+    class="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+    aria-expanded="false"
+    aria-haspopup="true"
+  >
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+    </svg>
+    <span class="uppercase">{currentLang}</span>
+    <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+  
+  <div 
+    id="language-menu"
+    class="absolute right-0 top-full mt-2 w-32 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50 opacity-0 invisible transition-all duration-200"
+  >
+    {Object.entries(languages).map(([lang, label]) => (
+      <a
+        href={lang === 'en' ? basePath : `/${lang}${basePath}`}
+        class={`block px-4 py-2 text-sm transition-colors duration-200 ${
+          currentLang === lang 
+            ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20' 
+            : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
+        }`}
+      >
+        {label}
+      </a>
+    ))}
+  </div>
+</div>
+
+<script>
+  function initLanguageSwitcher() {
+    const button = document.getElementById('language-button');
+    const menu = document.getElementById('language-menu');
+    const chevron = button?.querySelector('svg');
+    
+    if (!button || !menu || !chevron) return;
+    
+    function toggleMenu() {
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+      
+      if (isOpen) {
+        button.setAttribute('aria-expanded', 'false');
+        menu.classList.add('opacity-0', 'invisible');
+        chevron.style.transform = 'rotate(0deg)';
+      } else {
+        button.setAttribute('aria-expanded', 'true');
+        menu.classList.remove('opacity-0', 'invisible');
+        chevron.style.transform = 'rotate(180deg)';
+      }
+    }
+    
+    function closeMenu() {
+      button.setAttribute('aria-expanded', 'false');
+      menu.classList.add('opacity-0', 'invisible');
+      chevron.style.transform = 'rotate(0deg)';
+    }
+    
+    button.addEventListener('click', toggleMenu);
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!button.contains(e.target as Node) && !menu.contains(e.target as Node)) {
+        closeMenu();
+      }
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMenu();
+      }
+    });
+  }
+  
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
+  
+  // Re-initialize after navigation (for view transitions)
+  document.addEventListener('astro:after-swap', initLanguageSwitcher);
+</script>
+
+<style>
+  .language-switcher {
+    position: relative;
+  }
+</style>

@@ -1,9 +1,9 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Button from '../components/Button.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Button from '../../components/Button.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -32,10 +32,10 @@ const t = useTranslations(lang);
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center slide-up stagger-3">
-          <Button href={lang === 'en' ? '/projects' : `/${lang}/projects`} variant="primary" size="lg">
+          <Button href={lang === 'es' ? '/projects' : `/${lang}/projects`} variant="primary" size="lg">
             {t('home.cta.projects')}
           </Button>
-          <Button href={lang === 'en' ? '/contact' : `/${lang}/contact`} variant="outline" size="lg">
+          <Button href={lang === 'es' ? '/contact' : `/${lang}/contact`} variant="outline" size="lg">
             {t('home.cta.contact')}
           </Button>
         </div>
@@ -57,7 +57,7 @@ const t = useTranslations(lang);
           <p class="text-gray-600 dark:text-gray-300 mb-8">
             {t('home.section.description2')}
           </p>
-          <Button href={lang === 'en' ? '/about' : `/${lang}/about`} variant="secondary">
+          <Button href={lang === 'es' ? '/about' : `/${lang}/about`} variant="secondary">
             {t('home.section.cta')}
           </Button>
         </div>
@@ -108,7 +108,7 @@ const t = useTranslations(lang);
       <p class="text-xl text-blue-100 mb-8 slide-up stagger-1">
         {t('home.cta.section.description')}
       </p>
-      <Button href={lang === 'en' ? '/contact' : `/${lang}/contact`} variant="secondary" size="lg" class="slide-up stagger-2">
+      <Button href={lang === 'es' ? '/contact' : `/${lang}/contact`} variant="secondary" size="lg" class="slide-up stagger-2">
         {t('home.cta.section.button')}
       </Button>
     </div>
