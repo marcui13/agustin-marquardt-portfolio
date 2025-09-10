@@ -15,7 +15,7 @@ export const ui = {
     'nav.contact': 'Contacto',
     
     // Home page
-    'home.title': 'Agustín Marquardt - Mobile Engineer & AI Enthusiast',
+    'home.title': 'Agustín Marquardt - Portfolio',
     'home.greeting': 'Hola, soy',
     'home.subtitle': 'Mobile Engineer especializado en Angular, Ionic y Capacitor. Explorando el futuro de la IA en aplicaciones móviles.',
     'home.cta.projects': 'Ver mis proyectos',
@@ -163,7 +163,7 @@ export const ui = {
     'nav.contact': 'Contact',
     
     // Home page
-    'home.title': 'Agustín Marquardt - Mobile Engineer & AI Enthusiast',
+    'home.title': 'Agustín Marquardt - Portfolio',
     'home.greeting': 'Hi, I\'m',
     'home.subtitle': 'Mobile Engineer specialized in Angular, Ionic and Capacitor. Exploring the future of AI in mobile applications.',
     'home.cta.projects': 'View my projects',
