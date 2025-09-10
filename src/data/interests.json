@@ -1,0 +1,22 @@
+[
+  { 
+    "name": "Artificial Intelligence",
+    "description": "Exploring AI applications in mobile development and studying AI at Universidad Nacional de Rosario",
+    "icon": "🤖"
+  },
+  { 
+    "name": "Finance",
+    "description": "Personal finance management and fintech solutions",
+    "icon": "💰"
+  },
+  { 
+    "name": "Personal Development",
+    "description": "Continuous learning and growth mindset",
+    "icon": "🚀"
+  },
+  { 
+    "name": "Cooking",
+    "description": "Exploring culinary arts and experimenting with new recipes",
+    "icon": "👨‍🍳"
+  }
+]

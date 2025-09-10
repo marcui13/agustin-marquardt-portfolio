@@ -1,0 +1,29 @@
+---
+export interface Props {
+  name: string;
+  description?: string;
+  icon?: string;
+}
+
+const { name, description, icon } = Astro.props;
+---
+
+<div class="group bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+  <div class="text-center">
+    {icon && (
+      <div class="text-4xl mb-4 transform transition-transform group-hover:scale-110">
+        {icon}
+      </div>
+    )}
+    
+    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+      {name}
+    </h3>
+    
+    {description && (
+      <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+        {description}
+      </p>
+    )}
+  </div>
+</div>

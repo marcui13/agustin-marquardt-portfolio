@@ -1,0 +1,268 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import InterestCard from '../components/InterestCard.astro';
+import Button from '../components/Button.astro';
+import interestsData from '../data/interests.json';
+---
+
+<MainLayout title="Intereses - Agustín Marquardt">
+  <Header slot="header" />
+  
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Header -->
+    <div class="text-center mb-16 fade-in">
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+        Mis Intereses
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        Más allá del desarrollo de software, tengo diversas pasiones que alimentan mi creatividad 
+        y perspectiva única en la tecnología.
+      </p>
+    </div>
+
+    <!-- Interests Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      {interestsData.map((interest, index) => (
+        <div class={`slide-up stagger-${index + 1}`}>
+          <InterestCard 
+            name={interest.name}
+            description={interest.description}
+            icon={interest.icon}
+          />
+        </div>
+      ))}
+    </div>
+
+    <!-- Detailed Sections -->
+    <div class="space-y-16">
+      <!-- AI Section -->
+      <section class="slide-up stagger-1">
+        <div class="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-2xl p-8 lg:p-12">
+          <div class="max-w-4xl mx-auto">
+            <div class="flex items-center mb-6">
+              <span class="text-4xl mr-4">🤖</span>
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
+                Inteligencia Artificial
+              </h2>
+            </div>
+            
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+              La IA no es solo mi área de estudio actual, sino una pasión que impulsa mi visión del futuro tecnológico. 
+              Estoy particularmente interesado en:
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-3">Aplicaciones Móviles Inteligentes</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Integración de modelos de IA en apps móviles para crear experiencias más personalizadas e intuitivas.
+                </p>
+              </div>
+              
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-3">APIs de IA</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Experiencia práctica con OpenAI y Gemini APIs, explorando sus capacidades en el desarrollo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Finance Section -->
+      <section class="slide-up stagger-2">
+        <div class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl p-8 lg:p-12">
+          <div class="max-w-4xl mx-auto">
+            <div class="flex items-center mb-6">
+              <span class="text-4xl mr-4">💰</span>
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
+                Finanzas
+              </h2>
+            </div>
+            
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+              Mi interés en las finanzas se refleja tanto en mi vida personal como en mis proyectos de desarrollo. 
+              Me fascina la intersección entre tecnología y finanzas.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center">
+                <div class="text-2xl mb-3">📊</div>
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Análisis de Mercados</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Estudio de tendencias y análisis técnico
+                </p>
+              </div>
+              
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center">
+                <div class="text-2xl mb-3">💳</div>
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Fintech</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Desarrollo en el sector financiero con Prex
+                </p>
+              </div>
+              
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center">
+                <div class="text-2xl mb-3">📱</div>
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Apps Financieras</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Proyectos de gestión financiera personal
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Personal Development Section -->
+      <section class="slide-up stagger-3">
+        <div class="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-2xl p-8 lg:p-12">
+          <div class="max-w-4xl mx-auto">
+            <div class="flex items-center mb-6">
+              <span class="text-4xl mr-4">🚀</span>
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
+                Desarrollo Personal
+              </h2>
+            </div>
+            
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
+              Creo firmemente que el crecimiento personal y profesional van de la mano. 
+              Mi filosofía se basa en el aprendizaje continuo y la mejora constante.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Principios que me guían:</h3>
+                <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+                  <li class="flex items-center">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                    Aprendizaje continuo en tecnologías emergentes
+                  </li>
+                  <li class="flex items-center">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                    Mantener equilibrio entre vida personal y profesional
+                  </li>
+                  <li class="flex items-center">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                    Compartir conocimiento con la comunidad
+                  </li>
+                  <li class="flex items-center">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                    Aceptar desafíos que me saquen de la zona de confort
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Actualmente aprendiendo:</h3>
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="text-gray-600 dark:text-gray-300">Inteligencia Artificial</span>
+                    <div class="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                      <div class="bg-orange-500 h-2 rounded-full w-3/4"></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-gray-600 dark:text-gray-300">Machine Learning</span>
+                    <div class="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                      <div class="bg-orange-500 h-2 rounded-full w-2/3"></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-gray-600 dark:text-gray-300">Cloud Computing</span>
+                    <div class="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                      <div class="bg-orange-500 h-2 rounded-full w-1/2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cooking Section -->
+      <section class="slide-up stagger-4">
+        <div class="bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 rounded-2xl p-8 lg:p-12">
+          <div class="max-w-4xl mx-auto text-center">
+            <div class="flex justify-center items-center mb-6">
+              <span class="text-4xl mr-4">👨‍🍳</span>
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
+                Cocina
+              </h2>
+            </div>
+            
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+              La cocina es mi escape creativo. Me encanta experimentar con nuevos sabores y técnicas, 
+              encontrando paralelos entre la precisión del código y la creatividad culinaria.
+            </p>
+            
+            <div class="grid sm:grid-cols-3 gap-6">
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
+                <div class="text-2xl mb-3">🍝</div>
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Pasta Italiana</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">Mi especialidad favorita</p>
+              </div>
+              
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
+                <div class="text-2xl mb-3">🥘</div>
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Cocina Argentina</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">Tradiciones familiares</p>
+              </div>
+              
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
+                <div class="text-2xl mb-3">🍣</div>
+                <h3 class="font-semibold text-gray-900 dark:text-white mb-2">Cocina Asiática</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">Nuevos sabores por explorar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- How to Add Interests -->
+    <section class="mt-16 bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 slide-up stagger-5">
+      <div class="max-w-3xl mx-auto">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+          <span class="mr-2">💡</span>
+          ¿Cómo agregar nuevos intereses?
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          Para agregar nuevos intereses simplemente edita el archivo 
+          <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-sm">src/data/interests.json</code>
+        </p>
+        <div class="bg-gray-900 rounded-lg p-4 text-sm">
+          <pre class="text-green-400"><code>{`{
+  "name": "Nombre del Interés",
+  "description": "Descripción del interés...",
+  "icon": "🎯"
+}`}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center py-16 slide-up stagger-6">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        ¿Compartimos algún interés?
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+        Me encantaría conocer tus pasiones y encontrar puntos en común para colaborar.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button href="/contact" variant="primary" size="lg">
+          Hablemos
+        </Button>
+        <Button href="/projects" variant="outline" size="lg">
+          Ver mis proyectos
+        </Button>
+      </div>
+    </section>
+  </div>
+
+  <Footer slot="footer" />
+</MainLayout>

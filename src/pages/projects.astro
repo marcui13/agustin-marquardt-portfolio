@@ -1,0 +1,132 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Button from '../components/Button.astro';
+import projectsData from '../data/projects.json';
+
+const featuredProjects = projectsData.filter(project => project.featured);
+const otherProjects = projectsData.filter(project => !project.featured);
+---
+
+<MainLayout title="Proyectos - Agustín Marquardt">
+  <Header slot="header" />
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Header -->
+    <div class="text-center mb-16 fade-in">
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+        Mis Proyectos
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        Una colección de proyectos que demuestran mi experiencia en desarrollo móvil, 
+        integración de IA y exploración de nuevas tecnologías.
+      </p>
+    </div>
+
+    <!-- Featured Projects -->
+    {featuredProjects.length > 0 && (
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 slide-up stagger-1">
+          🌟 Proyectos Destacados
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          {featuredProjects.map((project, index) => (
+            <div class={`slide-up stagger-${index + 2}`}>
+              <ProjectCard 
+                name={project.name}
+                description={project.description}
+                link={project.link}
+                technologies={project.technologies}
+                featured={project.featured}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Other Projects -->
+    {otherProjects.length > 0 && (
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 slide-up stagger-1">
+          💻 Otros Proyectos
+        </h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {otherProjects.map((project, index) => (
+            <div class={`slide-up stagger-${index + 2}`}>
+              <ProjectCard 
+                name={project.name}
+                description={project.description}
+                link={project.link}
+                technologies={project.technologies}
+                featured={project.featured}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- GitHub CTA -->
+    <section class="bg-gradient-to-r from-gray-900 to-gray-800 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 lg:p-12 text-center text-white slide-up stagger-3">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">
+          ¿Quieres ver más?
+        </h2>
+        <p class="text-lg text-gray-300 mb-8">
+          Visita mi perfil de GitHub para explorar todos mis repositorios, contribuciones 
+          y experimentos con nuevas tecnologías.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button 
+            href="https://github.com/agustin-marquardt" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            variant="secondary" 
+            size="lg"
+            class="inline-flex items-center"
+          >
+            <svg class="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            Ver GitHub
+          </Button>
+          
+          <Button href="/contact" variant="outline" size="lg">
+            Contactarme
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Add Projects -->
+    <section class="mt-16 bg-blue-50 dark:bg-gray-800 rounded-2xl p-8 slide-up stagger-4">
+      <div class="max-w-3xl mx-auto">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+          <span class="mr-2">💡</span>
+          ¿Cómo agregar nuevos proyectos?
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">
+          Para agregar nuevos proyectos simplemente edita el archivo 
+          <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded text-sm">src/data/projects.json</code>
+        </p>
+        <div class="bg-gray-900 rounded-lg p-4 text-sm">
+          <pre class="text-green-400"><code>{`{
+  "name": "Nombre del Proyecto",
+  "description": "Descripción del proyecto...",
+  "link": "https://github.com/usuario/proyecto",
+  "technologies": ["React", "Node.js", "MongoDB"],
+  "featured": true
+}`}</code></pre>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <Footer slot="footer" />
+</MainLayout>

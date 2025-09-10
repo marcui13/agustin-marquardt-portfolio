@@ -1,0 +1,188 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+---
+
+<MainLayout title="Sobre mí - Agustín Marquardt">
+  <Header slot="header" />
+  
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Header -->
+    <div class="text-center mb-16 fade-in">
+      <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+        Sobre mí
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        Mobile Engineer apasionado por la tecnología, la innovación y el aprendizaje continuo.
+      </p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="space-y-16">
+      <!-- Experience -->
+      <section class="slide-up stagger-1">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+          💼 Experiencia Profesional
+        </h2>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
+              <span class="text-blue-600 dark:text-blue-400 font-bold">P</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                Mobile Engineer - Prex
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Desarrollo y mantenimiento de aplicaciones móviles utilizando <strong>Angular, Ionic y Capacitor</strong>. 
+                Integración con <strong>Firebase</strong> para servicios backend y gestión de datos en tiempo real. 
+                Colaboración en equipos ágiles para entregar soluciones innovadoras en el sector fintech.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300 rounded-full text-sm">Angular</span>
+                <span class="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 rounded-full text-sm">Ionic</span>
+                <span class="px-3 py-1 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 rounded-full text-sm">Capacitor</span>
+                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300 rounded-full text-sm">Firebase</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="slide-up stagger-2">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+          🎓 Formación Académica
+        </h2>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
+          <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center">
+              <span class="text-purple-600 dark:text-purple-400 font-bold">UNR</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                Programa Técnico de Inteligencia Artificial
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Universidad Nacional de Rosario - <em>En curso</em>
+              </p>
+              <p class="text-gray-600 dark:text-gray-300">
+                Estudios especializados en IA, machine learning y sus aplicaciones en el desarrollo de software. 
+                Explorando cómo integrar tecnologías de IA en aplicaciones móviles para crear experiencias más inteligentes e intuitivas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Personal Projects -->
+      <section class="slide-up stagger-3">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+          🚀 Proyectos Personales
+        </h2>
+        
+        <div class="space-y-6">
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+              Integración de IA en Aplicaciones Móviles
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Desarrollo de aplicaciones móviles que integran las <strong>APIs de OpenAI y Gemini</strong> 
+              para ofrecer funcionalidades inteligentes como procesamiento de lenguaje natural, 
+              generación de contenido y asistencia automatizada.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300 rounded-full text-sm">OpenAI API</span>
+              <span class="px-3 py-1 bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300 rounded-full text-sm">Gemini API</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 rounded-full text-sm">Ionic</span>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+              Exploración en Web3 y Smart Contracts
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Experiencia previa desarrollando con <strong>Solidity</strong> y explorando el ecosistema Web3. 
+              Aunque actualmente enfocado en IA y desarrollo móvil, mantengo interés en proyectos blockchain futuros.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 rounded-full text-sm">Solidity</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300 rounded-full text-sm">Web3</span>
+              <span class="px-3 py-1 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 rounded-full text-sm">Smart Contracts</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interests -->
+      <section class="slide-up stagger-4">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+          ❤️ Más allá del código
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="text-2xl mb-3">💰</div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Finanzas</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Me apasiona entender los mercados financieros y la gestión de finanzas personales. 
+              Esta pasión se refleja en algunos de mis proyectos de desarrollo.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="text-2xl mb-3">🚀</div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Desarrollo Personal</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Creo firmemente en el aprendizaje continuo y el crecimiento personal. 
+              Siempre busco nuevas formas de mejorar tanto profesional como personalmente.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="text-2xl mb-3">🤖</div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Inteligencia Artificial</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Fascinado por el potencial de la IA para transformar la manera en que interactuamos 
+              con la tecnología y resolvemos problemas complejos.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+            <div class="text-2xl mb-3">👨‍🍳</div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Cocina</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Disfruto experimentar en la cocina y crear nuevas recetas. 
+              Es mi forma de relajarme y expresar creatividad fuera del mundo tech.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="text-center py-16 slide-up stagger-4">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          ¿Quieres trabajar conmigo?
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+          Siempre estoy abierto a nuevas oportunidades y proyectos interesantes.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="/projects" variant="primary" size="lg">
+            Ver mis proyectos
+          </Button>
+          <Button href="/contact" variant="outline" size="lg">
+            Contactarme
+          </Button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</MainLayout>

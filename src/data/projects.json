@@ -1,0 +1,30 @@
+[
+  {
+    "name": "AI Mobile App",
+    "description": "Integrates OpenAI API in a mobile app using Ionic + Angular.",
+    "link": "https://github.com/agustin/ai-mobile-app",
+    "technologies": ["Angular", "Ionic", "Capacitor", "OpenAI API"],
+    "featured": true
+  },
+  {
+    "name": "Personal Finance Tracker",
+    "description": "Tracks income and expenses, built with Firebase.",
+    "link": "https://github.com/agustin/finance-tracker",
+    "technologies": ["Angular", "Firebase", "TailwindCSS"],
+    "featured": true
+  },
+  {
+    "name": "Gemini Integration App",
+    "description": "Mobile application integrating Google's Gemini AI for enhanced user interactions.",
+    "link": "https://github.com/agustin/gemini-mobile-app",
+    "technologies": ["Ionic", "Angular", "Gemini API", "Capacitor"],
+    "featured": false
+  },
+  {
+    "name": "Smart Contract Explorer",
+    "description": "Web3 application for exploring and interacting with smart contracts on Ethereum.",
+    "link": "https://github.com/agustin/smart-contract-explorer",
+    "technologies": ["Solidity", "React", "Web3.js", "Ethereum"],
+    "featured": false
+  }
+]
