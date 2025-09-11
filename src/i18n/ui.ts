@@ -153,6 +153,15 @@ export const ui = {
     'contact.cta.description': 'Ya sea que tengas una idea brillante, una oportunidad de trabajo, o simplemente quieras conectar, me encantaría escucharte.',
     'contact.cta.email': 'Enviar Email',
     'contact.cta.linkedin': 'Conectar en LinkedIn',
+    'contact.whatsapp.title': 'WhatsApp',
+    'contact.whatsapp.description': 'Envíame un mensaje directo para conversaciones rápidas e inmediatas.',
+    'contact.whatsapp.button': 'Enviar mensaje',
+    'contact.cta.whatsapp': 'Escribir por WhatsApp',
+    
+    // Preset messages
+    'contact.preset.whatsapp': '¡Hola Agustín! Vi tu portfolio y me gustaría conversar contigo sobre...',
+    'contact.preset.email.subject': 'Contacto desde tu portfolio',
+    'contact.preset.email.body': 'Hola Agustín,\n\nVi tu portfolio y me gustaría conversar contigo sobre oportunidades de colaboración.\n\nSaludos,',
     
     // Footer
     'footer.copyright': 'Todos los derechos reservados.',
@@ -305,6 +314,15 @@ export const ui = {
     'contact.cta.description': 'Whether you have a brilliant idea, a job opportunity, or simply want to connect, I\'d love to hear from you.',
     'contact.cta.email': 'Send Email',
     'contact.cta.linkedin': 'Connect on LinkedIn',
+    'contact.whatsapp.title': 'WhatsApp',
+    'contact.whatsapp.description': 'Send me a direct message for quick and immediate conversations.',
+    'contact.whatsapp.button': 'Send message',
+    'contact.cta.whatsapp': 'Message on WhatsApp',
+    
+    // Preset messages
+    'contact.preset.whatsapp': 'Hi Agustin! I saw your portfolio and would like to talk with you about...',
+    'contact.preset.email.subject': 'Contact from your portfolio',
+    'contact.preset.email.body': 'Hi Agustin,\n\nI saw your portfolio and would like to talk with you about collaboration opportunities.\n\nBest regards,',
     
     // Footer
     'footer.copyright': 'All rights reserved.',
