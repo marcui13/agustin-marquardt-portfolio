@@ -2,10 +2,8 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import InterestCard from '../../components/InterestCard.astro';
 import Button from '../../components/Button.astro';
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
-import interestsData from '../../data/interests.json';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -26,23 +24,11 @@ const t = useTranslations(lang);
       </p>
     </div>
 
-    <!-- Interests Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-      {interestsData.map((interest, index) => (
-        <div class={`slide-up stagger-${index + 1}`}>
-          <InterestCard 
-            name={interest.name}
-            description={interest.description}
-            icon={interest.icon}
-          />
-        </div>
-      ))}
-    </div>
 
     <!-- Detailed Sections -->
     <div class="space-y-16">
       <!-- AI Section -->
-      <section class="slide-up stagger-1">
+      <section id="ai-section" class="slide-up stagger-1 scroll-mt-32">
         <div class="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-2xl p-8 lg:p-12">
           <div class="max-w-4xl mx-auto">
             <div class="flex items-center mb-6">
@@ -77,7 +63,7 @@ const t = useTranslations(lang);
       </section>
 
       <!-- Finance Section -->
-      <section class="slide-up stagger-2">
+      <section id="finance-section" class="slide-up stagger-2 scroll-mt-32">
         <div class="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl p-8 lg:p-12">
           <div class="max-w-4xl mx-auto">
             <div class="flex items-center mb-6">
@@ -122,7 +108,7 @@ const t = useTranslations(lang);
       </section>
 
       <!-- Personal Development Section -->
-      <section class="slide-up stagger-3">
+      <section id="development-section" class="slide-up stagger-3 scroll-mt-32">
         <div class="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-2xl p-8 lg:p-12">
           <div class="max-w-4xl mx-auto">
             <div class="flex items-center mb-6">
@@ -188,8 +174,70 @@ const t = useTranslations(lang);
         </div>
       </section>
 
+      <!-- Self-Knowledge & Mindfulness Section -->
+      <section id="mindfulness-section" class="slide-up stagger-4 scroll-mt-32">
+        <div class="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-2xl p-8 lg:p-12">
+          <div class="max-w-4xl mx-auto">
+            <div class="flex items-center mb-6">
+              <span class="text-4xl mr-4">🧠</span>
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
+                Autoconocimiento y Mindfulness
+              </h2>
+            </div>
+            
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
+              Creo profundamente en el poder del autoconocimiento como herramienta fundamental para el crecimiento personal. 
+              Exploro la intersección entre ciencia y sabiduría ancestral para entender mejor la mente humana y cultivar 
+              una mayor consciencia.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Áreas de exploración:</h3>
+                <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+                  <li class="flex items-center">
+                    <div class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
+                    Psicología cognitiva y del comportamiento
+                  </li>
+                  <li class="flex items-center">
+                    <div class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
+                    Neurociencia y plasticidad cerebral
+                  </li>
+                  <li class="flex items-center">
+                    <div class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
+                    Meditación y mindfulness
+                  </li>
+                  <li class="flex items-center">
+                    <div class="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
+                    Yoga y filosofías contemplativas
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="bg-white dark:bg-gray-800 rounded-xl p-6">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Libros que me inspiran:</h3>
+                <div class="space-y-3 text-gray-600 dark:text-gray-300">
+                  <div class="flex items-start">
+                    <span class="text-indigo-500 mr-2">📖</span>
+                    <span class="text-sm">"Sapiens" por Yuval Noah Harari</span>
+                  </div>
+                  <div class="flex items-start">
+                    <span class="text-indigo-500 mr-2">📖</span>
+                    <span class="text-sm">"El Poder del Ahora" por Eckhart Tolle</span>
+                  </div>
+                  <div class="flex items-start">
+                    <span class="text-indigo-500 mr-2">📖</span>
+                    <span class="text-sm">"Thinking, Fast and Slow" por Daniel Kahneman</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Cooking Section -->
-      <section class="slide-up stagger-4">
+      <section id="cooking-section" class="slide-up stagger-5 scroll-mt-32">
         <div class="bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 rounded-2xl p-8 lg:p-12">
           <div class="max-w-4xl mx-auto text-center">
             <div class="flex justify-center items-center mb-6">
@@ -229,7 +277,7 @@ const t = useTranslations(lang);
     </div>
 
     <!-- How to Add Interests -->
-    <section class="mt-16 bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 slide-up stagger-5">
+    <section class="mt-16 bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 slide-up stagger-6">
       <div class="max-w-3xl mx-auto">
         <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
           <span class="mr-2">💡</span>
@@ -250,7 +298,7 @@ const t = useTranslations(lang);
     </section>
 
     <!-- CTA -->
-    <section class="text-center py-16 slide-up stagger-6">
+    <section class="text-center py-16 slide-up stagger-7">
       <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
         ¿Compartimos algún interés?
       </h2>
