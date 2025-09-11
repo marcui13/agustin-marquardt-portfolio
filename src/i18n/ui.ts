@@ -153,6 +153,10 @@ export const ui = {
     'contact.cta.description': 'Ya sea que tengas una idea brillante, una oportunidad de trabajo, o simplemente quieras conectar, me encantaría escucharte.',
     'contact.cta.email': 'Enviar Email',
     'contact.cta.linkedin': 'Conectar en LinkedIn',
+    
+    // Footer
+    'footer.copyright': 'Todos los derechos reservados.',
+    'footer.builtWith': 'Construido con Astro + TailwindCSS',
   },
   en: {
     // Navigation
@@ -301,5 +305,9 @@ export const ui = {
     'contact.cta.description': 'Whether you have a brilliant idea, a job opportunity, or simply want to connect, I\'d love to hear from you.',
     'contact.cta.email': 'Send Email',
     'contact.cta.linkedin': 'Connect on LinkedIn',
+    
+    // Footer
+    'footer.copyright': 'All rights reserved.',
+    'footer.builtWith': 'Built with Astro + TailwindCSS',
   },
 } as const;

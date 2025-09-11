@@ -1,4 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const currentYear = new Date().getFullYear();
 
 const socialLinks = [
@@ -25,7 +29,7 @@ const socialLinks = [
     <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
       <!-- Copyright -->
       <p class="text-gray-600 dark:text-gray-400 text-sm">
-        © {currentYear} Agustín Marquardt. Todos los derechos reservados.
+        © {currentYear} Agustín Marquardt. {t('footer.copyright')}
       </p>
 
       <!-- Social Links -->
@@ -61,7 +65,7 @@ const socialLinks = [
     <!-- Tech Stack -->
     <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
       <p class="text-center text-xs text-gray-500 dark:text-gray-400">
-        Construido con Astro + TailwindCSS
+        {t('footer.builtWith')}
       </p>
     </div>
   </div>
