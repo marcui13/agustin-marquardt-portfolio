@@ -1,11 +1,30 @@
 [
   {
-    "name": "Search Visualizer",
+    "name": "Quiet the Mind 🧘🏻‍♂️",
+    "description_en": "A calming blog built with Astro, focused on understanding intrusive thoughts and learning healthy ways to manage them.",
+    "description_es": "Un blog relajante creado con Astro, centrado en comprender los pensamientos intrusivos y aprender formas saludables de manejarlos.",
+    "link_github": "https://github.com/marcui13/quiet-the-mind",
+    "link_vercel": "https://quiet-the-mind.vercel.app/",
+    "technologies": [
+      "Astro",
+      "TypeScript",
+      "TailwindCSS",
+      "Prism.js"
+    ],
+    "featured": true
+  },
+  {
+    "name": "Search Visualizer 🔍",
     "description_en": "Interactive web app that demonstrates graph search algorithms (BFS, DFS, UCS) with step-by-step visualizations and educational content.",
     "description_es": "Aplicación web interactiva que demuestra algoritmos de búsqueda en grafos (BFS, DFS, UCS) con visualizaciones paso a paso y contenido educativo.",
     "link_github": "https://github.com/marcui13/search-visualizer-2",
     "link_vercel": "https://search-visualizer-2.vercel.app/",
-    "technologies": ["Astro", "TypeScript", "TailwindCSS", "Prism.js"],
+    "technologies": [
+      "Astro",
+      "TypeScript",
+      "TailwindCSS",
+      "Prism.js"
+    ],
     "featured": true
   },
   {
@@ -13,7 +32,12 @@
     "description_en": "Integrates OpenAI API in a mobile app using Ionic + Angular.",
     "description_es": "Integra la API de OpenAI en una aplicación móvil usando Ionic + Angular.",
     "link_github": "https://github.com/agustin/ai-mobile-app",
-    "technologies": ["Angular", "Ionic", "Capacitor", "OpenAI API"],
+    "technologies": [
+      "Angular",
+      "Ionic",
+      "Capacitor",
+      "OpenAI API"
+    ],
     "featured": true
   },
   {
@@ -21,7 +45,11 @@
     "description_en": "Tracks income and expenses, built with Firebase.",
     "description_es": "Rastrea ingresos y gastos, construido con Firebase.",
     "link_github": "https://github.com/agustin/finance-tracker",
-    "technologies": ["Angular", "Firebase", "TailwindCSS"],
+    "technologies": [
+      "Angular",
+      "Firebase",
+      "TailwindCSS"
+    ],
     "featured": true
   },
   {
@@ -29,7 +57,12 @@
     "description_en": "Mobile application integrating Google's Gemini AI for enhanced user interactions.",
     "description_es": "Aplicación móvil que integra Google Gemini AI para mejorar las interacciones del usuario.",
     "link_github": "https://github.com/agustin/gemini-mobile-app",
-    "technologies": ["Ionic", "Angular", "Gemini API", "Capacitor"],
+    "technologies": [
+      "Ionic",
+      "Angular",
+      "Gemini API",
+      "Capacitor"
+    ],
     "featured": false
   },
   {
@@ -37,7 +70,12 @@
     "description_en": "Web3 application for exploring and interacting with smart contracts on Ethereum.",
     "description_es": "Aplicación Web3 para explorar e interactuar con contratos inteligentes en Ethereum.",
     "link_github": "https://github.com/agustin/smart-contract-explorer",
-    "technologies": ["Solidity", "React", "Web3.js", "Ethereum"],
+    "technologies": [
+      "Solidity",
+      "React",
+      "Web3.js",
+      "Ethereum"
+    ],
     "featured": false
   }
 ]
