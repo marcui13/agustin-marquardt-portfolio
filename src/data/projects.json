@@ -1,29 +1,42 @@
 [
   {
+    "name": "Search Visualizer",
+    "description_en": "Interactive web app that demonstrates graph search algorithms (BFS, DFS, UCS) with step-by-step visualizations and educational content.",
+    "description_es": "Aplicación web interactiva que demuestra algoritmos de búsqueda en grafos (BFS, DFS, UCS) con visualizaciones paso a paso y contenido educativo.",
+    "link_github": "https://github.com/marcui13/search-visualizer-2",
+    "link_vercel": "https://search-visualizer-2.vercel.app/",
+    "technologies": ["Astro", "TypeScript", "TailwindCSS", "Prism.js"],
+    "featured": true
+  },
+  {
     "name": "AI Mobile App",
-    "description": "Integrates OpenAI API in a mobile app using Ionic + Angular.",
-    "link": "https://github.com/agustin/ai-mobile-app",
+    "description_en": "Integrates OpenAI API in a mobile app using Ionic + Angular.",
+    "description_es": "Integra la API de OpenAI en una aplicación móvil usando Ionic + Angular.",
+    "link_github": "https://github.com/agustin/ai-mobile-app",
     "technologies": ["Angular", "Ionic", "Capacitor", "OpenAI API"],
     "featured": true
   },
   {
     "name": "Personal Finance Tracker",
-    "description": "Tracks income and expenses, built with Firebase.",
-    "link": "https://github.com/agustin/finance-tracker",
+    "description_en": "Tracks income and expenses, built with Firebase.",
+    "description_es": "Rastrea ingresos y gastos, construido con Firebase.",
+    "link_github": "https://github.com/agustin/finance-tracker",
     "technologies": ["Angular", "Firebase", "TailwindCSS"],
     "featured": true
   },
   {
     "name": "Gemini Integration App",
-    "description": "Mobile application integrating Google's Gemini AI for enhanced user interactions.",
-    "link": "https://github.com/agustin/gemini-mobile-app",
+    "description_en": "Mobile application integrating Google's Gemini AI for enhanced user interactions.",
+    "description_es": "Aplicación móvil que integra Google Gemini AI para mejorar las interacciones del usuario.",
+    "link_github": "https://github.com/agustin/gemini-mobile-app",
     "technologies": ["Ionic", "Angular", "Gemini API", "Capacitor"],
     "featured": false
   },
   {
     "name": "Smart Contract Explorer",
-    "description": "Web3 application for exploring and interacting with smart contracts on Ethereum.",
-    "link": "https://github.com/agustin/smart-contract-explorer",
+    "description_en": "Web3 application for exploring and interacting with smart contracts on Ethereum.",
+    "description_es": "Aplicación Web3 para explorar e interactuar con contratos inteligentes en Ethereum.",
+    "link_github": "https://github.com/agustin/smart-contract-explorer",
     "technologies": ["Solidity", "React", "Web3.js", "Ethereum"],
     "featured": false
   }
