@@ -14,11 +14,11 @@
     "featured": true
   },
   {
-    "name": "Search Visualizer 🔍",
-    "description_en": "Interactive web app that demonstrates graph search algorithms (BFS, DFS, UCS) with step-by-step visualizations and educational content.",
-    "description_es": "Aplicación web interactiva que demuestra algoritmos de búsqueda en grafos (BFS, DFS, UCS) con visualizaciones paso a paso y contenido educativo.",
-    "link_github": "https://github.com/marcui13/search-visualizer-2",
-    "link_vercel": "https://search-visualizer-2.vercel.app/",
+    "name": "Search Algorithms 🔍",
+    "description_en": "An educational website about search algorithms, built with Astro. It explores everything from the basics to advanced search techniques in computer science and artificial intelligence.",
+    "description_es": "Un sitio web educativo sobre algoritmos de búsqueda, construido con Astro. Explora desde los fundamentos hasta técnicas avanzadas de búsqueda en ciencias de la computación e inteligencia artificial.",
+    "link_github": "https://github.com/marcui13/search-algorithms",
+    "link_vercel": "https://search-algorithms-rose.vercel.app/",
     "technologies": [
       "Astro",
       "TypeScript",
