@@ -22,6 +22,26 @@ import '../styles/global.css';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Z8WEDB2LG"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0Z8WEDB2LG', {
+        page_path: window.location.pathname
+      });
+    </script>
+
+    <!-- Initialize page tracking for SPA navigation -->
+    <script type="module">
+      import { initPageTracking } from '/src/scripts/page-tracking.js';
+
+      // Initialize page tracking when DOM is loaded
+      document.addEventListener('DOMContentLoaded', initPageTracking);
+    </script>
   </head>
   <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-inter antialiased">
     <div class="min-h-screen flex flex-col">

@@ -99,13 +99,12 @@ const otherProjects = projectsData.filter((project) => !project.featured);
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
+          <a
             href="https://github.com/marcui13"
             target="_blank"
             rel="noopener noreferrer"
-            variant="secondary"
-            size="lg"
-            class="inline-flex items-center"
+            class="inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-lg bg-gray-100 text-gray-900 hover:bg-gray-200 active:bg-gray-300 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 px-6 py-3 text-base"
+            onclick="import('/src/scripts/analytics.js').then(module => module.trackExternalLink('https://github.com/marcui13', 'GitHub Profile'))"
           >
             <svg class="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -113,7 +112,7 @@ const otherProjects = projectsData.filter((project) => !project.featured);
               ></path>
             </svg>
             {t("projects.github.button")}
-          </Button>
+          </a>
 
           <Button
             href={lang === "en" ? "/contact" : `/${lang}/contact`}
