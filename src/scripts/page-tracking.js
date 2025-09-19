@@ -5,7 +5,8 @@
  * It automatically tracks pageviews when users navigate between pages without full page reloads.
  */
 
-import { trackPageview } from './analytics.js';
+import { trackPageview, trackUserEngagement } from './analytics.js';
+import { initAudienceTracking } from './audience-tracking.js';
 
 /**
  * Initialize page tracking
@@ -14,6 +15,12 @@ import { trackPageview } from './analytics.js';
 export function initPageTracking() {
   // Track initial page load
   trackPageview(window.location.pathname);
+
+  // Track user engagement data on first load
+  setTimeout(() => {
+    trackUserEngagement();
+    initAudienceTracking();
+  }, 2000); // Wait 2 seconds to ensure page is fully loaded
 
   // Track navigation events for SPA behavior
   let currentPath = window.location.pathname;

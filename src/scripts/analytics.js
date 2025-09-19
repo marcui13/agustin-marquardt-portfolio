@@ -80,3 +80,63 @@ export function trackNavigation(sectionName) {
 export function trackExternalLink(linkUrl, linkText) {
   trackEvent('external_link_click', 'outbound', `${linkText} - ${linkUrl}`);
 }
+
+/**
+ * Tracks user engagement and session details
+ * This function sends enhanced user data to better understand the audience
+ */
+export function trackUserEngagement() {
+  if (typeof gtag !== 'undefined') {
+    // Enhanced user data
+    const userData = {
+      'custom_map.timezone': Intl.DateTimeFormat().resolvedOptions().timeZone,
+      'custom_map.screen_resolution': `${screen.width}x${screen.height}`,
+      'custom_map.color_depth': screen.colorDepth,
+      'custom_map.language_preference': navigator.language,
+      'custom_map.platform': navigator.platform,
+      'custom_map.online_status': navigator.onLine ? 'online' : 'offline'
+    };
+
+    // Track user engagement event with custom parameters
+    gtag('event', 'user_engagement', userData);
+
+    // Track session info
+    gtag('event', 'session_info', {
+      'custom_map.referrer': document.referrer || 'direct',
+      'custom_map.viewport': `${window.innerWidth}x${window.innerHeight}`,
+      'custom_map.connection_type': getConnectionType()
+    });
+  }
+}
+
+/**
+ * Gets connection type information
+ * @returns {string} Connection type or 'unknown'
+ */
+function getConnectionType() {
+  if ('connection' in navigator) {
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    return connection ? `${connection.effectiveType || 'unknown'}_${connection.type || 'unknown'}` : 'unknown';
+  }
+  return 'unknown';
+}
+
+/**
+ * Tracks user preferences and behavior patterns
+ * @param {string} action - The action performed (e.g., 'dark_mode_toggle', 'language_change')
+ * @param {string} value - The value or preference selected
+ */
+export function trackUserPreference(action, value) {
+  trackEvent('user_preference', 'interaction', `${action}: ${value}`);
+}
+
+/**
+ * Tracks time spent on specific sections
+ * @param {string} section - The section name
+ * @param {number} timeSpent - Time in seconds
+ */
+export function trackTimeOnSection(section, timeSpent) {
+  if (timeSpent > 10) { // Only track if user spent more than 10 seconds
+    trackEvent('time_on_section', 'engagement', section, timeSpent);
+  }
+}

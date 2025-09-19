@@ -13,6 +13,7 @@ Un portfolio moderno y minimalista construido con **Astro** + **TailwindCSS**, d
 - **♿ Accesible**: Siguiendo las mejores prácticas de accesibilidad web
 - **🔍 SEO Optimizado**: Meta tags y estructura semántica
 - **🔄 i18n Integrado**: Sistema de traducción centralizado y extensible
+- **📊 Analytics Avanzados**: Google Analytics 4 con tracking completo de audiencia
 
 ## 🛠️ Stack Tecnológico
 
@@ -20,6 +21,7 @@ Un portfolio moderno y minimalista construido con **Astro** + **TailwindCSS**, d
 - **Styling**: [TailwindCSS](https://tailwindcss.com/)
 - **Tipografía**: [Inter Font](https://fonts.google.com/specimen/Inter)
 - **Iconos**: SVG personalizedos y emojis
+- **Analytics**: [Google Analytics 4](https://analytics.google.com/) con tracking avanzado
 - **Hosting**: Listo para desplegar en Vercel, Netlify o similares
 
 ## 📁 Estructura del Proyecto
@@ -57,6 +59,11 @@ src/
 ├── data/               # Datos en JSON
 │   ├── projects.json   # Lista de proyectos
 │   └── interests.json  # Lista de intereses
+│
+├── scripts/            # Scripts de funcionalidad
+│   ├── analytics.js    # Google Analytics y tracking de eventos
+│   ├── page-tracking.js # Tracking de navegación SPA
+│   └── audience-tracking.js # Analytics avanzados de audiencia
 │
 └── styles/             # Estilos globales
     └── global.css      # CSS personalizado y animaciones
@@ -98,6 +105,84 @@ npm run preview      # Vista previa de la build
 # Herramientas
 npm run astro        # CLI de Astro
 ```
+
+## 📊 Google Analytics 4 - Tracking Avanzado
+
+Este portfolio incluye una implementación completa de Google Analytics 4 con tracking avanzado para entender mejor a tu audiencia.
+
+### ✨ Características del Analytics
+
+#### 🎯 Tracking Automático
+- **Pageviews**: Todas las páginas visitadas
+- **Navegación SPA**: Cambios de ruta sin recarga
+- **Clics en proyectos**: GitHub y Vercel links
+- **Enlaces externos**: Tracking de outbound links
+- **Scroll depth**: Profundidad de lectura (25%, 50%, 75%, 90%, 100%)
+- **Tiempo en secciones**: Engagement por contenido
+
+#### 👥 Datos de Audiencia
+- **Ubicación geográfica**: País, región, ciudad (via IP)
+- **Información técnica**: Dispositivo, OS, navegador, resolución
+- **Zona horaria**: Para entender horarios de visita
+- **Preferencias**: Tema (dark/light), idioma, accesibilidad
+- **Comportamiento**: Patrones de interacción, tiempo activo
+- **Conectividad**: Tipo de conexión (WiFi, 4G, etc.)
+
+#### 🔧 Configuración
+
+El tracking ya está configurado con el ID: `G-0Z8WEDB2LG`
+
+Para cambiar a tu propio ID:
+
+1. **Reemplaza en `src/layouts/MainLayout.astro`**:
+```javascript
+// Líneas 27 y 33
+gtag/js?id=TU_MEASUREMENT_ID
+gtag('config', 'TU_MEASUREMENT_ID'
+```
+
+2. **Reemplaza en `src/scripts/analytics.js`**:
+```javascript
+// Línea 21
+gtag('config', 'TU_MEASUREMENT_ID', {
+```
+
+#### 📈 Eventos Personalizados Disponibles
+
+```javascript
+import {
+  trackPageview,
+  trackEvent,
+  trackProjectClick,
+  trackContactClick,
+  trackNavigation,
+  trackExternalLink,
+  trackUserPreference,
+  trackTimeOnSection
+} from '/src/scripts/analytics.js';
+
+// Ejemplos de uso
+trackProjectClick('Mi Proyecto', 'https://github.com/user/repo');
+trackContactClick('email');
+trackNavigation('about');
+trackUserPreference('theme', 'dark');
+```
+
+#### 🛡️ Privacidad y GDPR
+- **Datos anonimizados**: Sin información personal identificable
+- **IP anonimizada**: Solo ubicación aproximada (ciudad)
+- **Cumple GDPR**: Configuración por defecto compatible
+- **Sin cookies invasivas**: Solo cookies esenciales de GA4
+
+### 📊 Reportes Disponibles en GA4
+
+Una vez configurado, podrás ver:
+
+1. **Audiencia**: Demografía, tecnología, intereses
+2. **Adquisición**: Fuentes de tráfico, canales
+3. **Engagement**: Páginas populares, tiempo en sitio
+4. **Eventos**: Interacciones personalizadas
+5. **Conversiones**: Goals y objetivos definidos
 
 ## 📝 Personalización
 
